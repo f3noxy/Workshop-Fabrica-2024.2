@@ -1,9 +1,12 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from .models import EstadoModel
 from .serializers import EstadoSerializer
 import requests
 
 class EstadoViewSet(viewsets.ModelViewSet):
+    # permission_classes = (IsAuthenticated, )
+
     queryset = EstadoModel.objects.all()
     serializer_class = EstadoSerializer
 
